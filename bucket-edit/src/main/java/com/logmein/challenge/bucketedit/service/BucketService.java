@@ -77,7 +77,7 @@ public class BucketService implements IBucketService{
             bucket.put(orderItemDTO.getUserID(),newItemsSet);
         }
         else{
-            if(itemsSet.contains(orderItemDTO)) throw new ItemAlreadyExistsException("Item already exists in the bucket of " + orderItemDTO.getUserID());
+            if(itemsSet.contains(orderItemDTO.getItem())) throw new ItemAlreadyExistsException("Item already exists in the bucket of " + orderItemDTO.getUserID());
             itemsSet.add(orderItemDTO.getItem());
             orderItemDTO.getItem().setItemID(itemID);
            }

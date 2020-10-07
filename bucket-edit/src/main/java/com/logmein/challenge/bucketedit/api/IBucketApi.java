@@ -44,8 +44,8 @@ public interface IBucketApi {
     @RequestMapping(value = "/delete/user/{userID}/item/{itemID}",
     		consumes = { "application/json", "application/xml", "text/plain"},
             method = RequestMethod.DELETE)
-    
-    ResponseEntity<Void> deleteItem(@NotNull @ApiParam(value = "User ID whose item is to be deleted from  user bucket list", required = true) @Valid @PathVariable(value = "userID", required = true) String userID
+
+    ResponseEntity<String> deleteItem(@NotNull @ApiParam(value = "User ID whose item is to be deleted from  user bucket list", required = true) @Valid @PathVariable(value = "userID", required = true) String userID
             ,@NotNull @ApiParam(value = "Item ID to be deleted from user bucket list", required = true) @Valid @PathVariable(value = "itemID", required = true) UUID itemID);
 
     @ApiOperation(value = "Retrieve all items of an user bucket list.", nickname = "retrieveItems", notes = "Retrieve all items of an user bucket list.", response = Item.class, responseContainer = "List", tags={ "Retrieve all the items of an user bucket.", })
@@ -65,7 +65,7 @@ public interface IBucketApi {
     @RequestMapping(value = "/modify/item",
             consumes = { "application/json", "application/xml", "text/plain"},
             method = RequestMethod.PUT)
-    
-    ResponseEntity<Void> modifyItem(@ApiParam(value = "Item to be modified in the user bucket list"  )  @Valid @RequestBody OrderItem body);
+
+    ResponseEntity<String> modifyItem(@ApiParam(value = "Item to be modified in the user bucket list"  )  @Valid @RequestBody OrderItem body);
 
 }

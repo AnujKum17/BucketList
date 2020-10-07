@@ -1,14 +1,10 @@
 package com.logmein.challenge.bucketedit.model;
 
 import java.util.Objects;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-
 import org.springframework.validation.annotation.Validated;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import io.swagger.annotations.ApiModelProperty;
 
 @Validated
@@ -70,7 +66,6 @@ public class OrderItem {
 	  public String toString() {
 	    StringBuilder sb = new StringBuilder();
 	    sb.append("class OrderItem {\n");
-	    
 	    sb.append("    userID: ").append(toIndentedString(userID)).append("\n");
 	    sb.append("    item: ").append(toIndentedString(item)).append("\n");
 	    sb.append("}");
